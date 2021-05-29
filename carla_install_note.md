@@ -6,6 +6,27 @@ uname -srv
 sudo apt install linux-image-5.4.0-42-generic linux-headers-5.4.0-42-generic linux-modules-extra-5.4.0-42-generic
 で再起動　Ubuntu起動時にesc押してGrubメニュー表示後、Advanced options for Ubuntu選択、5.4.0-42-generic選択
 NVIDIA driver関連で問題が起こるならさらにダウングレードすることも検討)
+
+sudo gedit /etc/default/grub
+以下のように設定変更
+# GRUB_DEFAULT=0
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+閉じる
+sudo update-grub
+これで次回以降の起動でカーネル固定
+
+以下の作業で
+E: ロック /var/lib/dpkg/lock-frontend が取得できませんでした - open (11: リソースが一時的に利用できません)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+↑のようなエラーが出たら
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/lib/dpkg/lock
+sudo rm /var/lib/dpkg/lock-frontend
+
+これでもだめなら
+sudo apt autoremove
+
 ## pre-requirements
 ### CUDA & CUDA-toolkit
 cd /tmp/  
@@ -87,6 +108,7 @@ cd ~/UnrealEngine_4.22/Engine/Binaries/Linux && ./UE4Editor
 cd ~  
 git clone https://github.com/carla-simulator/carla  
 cd ~/carla
+
 git checkout e2c4dc1  
 (errorが出るけど無視してok)  
 
