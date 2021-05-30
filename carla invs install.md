@@ -173,117 +173,333 @@ make dependency　をおこなうと以下のエラー
 
 (invs) atusi@atusi-G3-3500:~/CARLA_INVS$ make dependency
 
+
 pip3 install -r requirement.txt
+
+
 Requirement already satisfied: open3d>=0.10 in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 1)) (0.11.2)
+
+
 Requirement already satisfied: plyfile in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 2)) (0.7.4)
+
+
 Requirement already satisfied: notebook in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 3)) (6.4.0)
+
+
 Requirement already satisfied: numpy in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 4)) (1.20.3)
+
+
 Requirement already satisfied: sklearn in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 5)) (0.0)
+
+
 Requirement already satisfied: matplotlib in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 6)) (3.4.2)
+
+
 Requirement already satisfied: shapely in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 7)) (1.7.1)
+
+
 Requirement already satisfied: lxml>=4.5.0 in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 8)) (4.6.3)
+
+
 Requirement already satisfied: halo in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 9)) (0.0.31)
+
+
 Requirement already satisfied: picotui in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 10)) (1.2)
+
+
 Requirement already satisfied: widgetsnbextension in /home/atusi/.local/lib/python3.7/site-packages (from open3d>=0.10->-r requirement.txt (line 1)) (3.5.1)
+
+
 Requirement already satisfied: addict in /home/atusi/.local/lib/python3.7/site-packages (from open3d>=0.10->-r requirement.txt (line 1)) (2.4.0)
+
+
 Requirement already satisfied: pandas in /home/atusi/.local/lib/python3.7/site-packages (from open3d>=0.10->-r requirement.txt (line 1)) (1.2.4)
+
+
 Requirement already satisfied: ipywidgets in /home/atusi/.local/lib/python3.7/site-packages (from open3d>=0.10->-r requirement.txt (line 1)) (7.6.3)
+
+
 Requirement already satisfied: tqdm in /home/atusi/.local/lib/python3.7/site-packages (from open3d>=0.10->-r requirement.txt (line 1)) (4.61.0)
+
+
 Requirement already satisfied: pyyaml in /home/atusi/.local/lib/python3.7/site-packages (from open3d>=0.10->-r requirement.txt (line 1)) (5.4.1)
+
+
 Requirement already satisfied: tornado>=6.1 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (6.1)
+
+
 Requirement already satisfied: pyzmq>=17 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (22.1.0)
+
+
 Requirement already satisfied: terminado>=0.8.3 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (0.10.0)
+
+
 Requirement already satisfied: jupyter-client>=5.3.4 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (6.2.0)
+
+
 Requirement already satisfied: nbformat in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (5.1.3)
+
+
 Requirement already satisfied: prometheus-client in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (0.10.1)
+
+
 Requirement already satisfied: Send2Trash>=1.5.0 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (1.5.0)
+
+
 Requirement already satisfied: ipykernel in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (5.5.5)
+
+
 Requirement already satisfied: jupyter-core>=4.6.1 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (4.7.1)
+
+
 Requirement already satisfied: ipython-genutils in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (0.2.0)
+
+
 Requirement already satisfied: nbconvert in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (6.0.7)
+
+
 Requirement already satisfied: argon2-cffi in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (20.1.0)
+
+
 Requirement already satisfied: jinja2 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (3.0.1)
+
+
 Requirement already satisfied: traitlets>=4.2.1 in /home/atusi/.local/lib/python3.7/site-packages (from notebook->-r requirement.txt (line 3)) (5.0.5)
+
+
 Requirement already satisfied: nest-asyncio>=1.5 in /home/atusi/.local/lib/python3.7/site-packages (from jupyter-client>=5.3.4->notebook->-r requirement.txt (line 3)) (1.5.1)
+
+
 Requirement already satisfied: python-dateutil>=2.1 in /home/atusi/.local/lib/python3.7/site-packages (from jupyter-client>=5.3.4->notebook->-r requirement.txt (line 3)) (2.8.1)
+
+
 Requirement already satisfied: six>=1.5 in /home/atusi/.local/lib/python3.7/site-packages (from python-dateutil>=2.1->jupyter-client>=5.3.4->notebook->-r requirement.txt (line 3)) (1.16.0)
+
+
 Requirement already satisfied: ptyprocess in /home/atusi/.local/lib/python3.7/site-packages (from terminado>=0.8.3->notebook->-r requirement.txt (line 3)) (0.7.0)
+
+
 Requirement already satisfied: scikit-learn in /home/atusi/.local/lib/python3.7/site-packages (from sklearn->-r requirement.txt (line 5)) (0.24.2)
+
+
 Requirement already satisfied: kiwisolver>=1.0.1 in /home/atusi/.local/lib/python3.7/site-packages (from matplotlib->-r requirement.txt (line 6)) (1.3.1)
+
+
 Requirement already satisfied: pillow>=6.2.0 in /home/atusi/.local/lib/python3.7/site-packages (from matplotlib->-r requirement.txt (line 6)) (8.2.0)
+
+
 Requirement already satisfied: pyparsing>=2.2.1 in /home/atusi/.local/lib/python3.7/site-packages (from matplotlib->-r requirement.txt (line 6)) (2.4.7)
+
+
 Requirement already satisfied: cycler>=0.10 in /home/atusi/.local/lib/python3.7/site-packages (from matplotlib->-r requirement.txt (line 6)) (0.10.0)
+
+
 Requirement already satisfied: log-symbols>=0.0.14 in /home/atusi/.local/lib/python3.7/site-packages (from halo->-r requirement.txt (line 9)) (0.0.14)
+
+
 Requirement already satisfied: termcolor>=1.1.0 in /home/atusi/.local/lib/python3.7/site-packages (from halo->-r requirement.txt (line 9)) (1.1.0)
+
+
 Requirement already satisfied: colorama>=0.3.9 in /home/atusi/.local/lib/python3.7/site-packages (from halo->-r requirement.txt (line 9)) (0.4.4)
+
+
 Requirement already satisfied: spinners>=0.0.24 in /home/atusi/.local/lib/python3.7/site-packages (from halo->-r requirement.txt (line 9)) (0.0.24)
+
+
 Requirement already satisfied: cffi>=1.0.0 in /home/atusi/.local/lib/python3.7/site-packages (from argon2-cffi->notebook->-r requirement.txt (line 3)) (1.14.5)
+
+
 Requirement already satisfied: pycparser in /home/atusi/.local/lib/python3.7/site-packages (from cffi>=1.0.0->argon2-cffi->notebook->-r requirement.txt (line 3)) (2.20)
+
+
 Requirement already satisfied: ipython>=5.0.0 in /home/atusi/.local/lib/python3.7/site-packages (from ipykernel->notebook->-r requirement.txt (line 3)) (7.24.0)
+
+
 Requirement already satisfied: pygments in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (2.9.0)
+
+
 Requirement already satisfied: jedi>=0.16 in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (0.18.0)
+
+
 Requirement already satisfied: pickleshare in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (0.7.5)
+
+
 Requirement already satisfied: decorator in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (5.0.9)
+
+
 Requirement already satisfied: pexpect>4.3 in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (4.8.0)
+
+
 Requirement already satisfied: backcall in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (0.2.0)
+
+
 Requirement already satisfied: matplotlib-inline in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (0.1.2)
+
+
 Requirement already satisfied: setuptools>=18.5 in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (57.0.0)
+
+
 Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /home/atusi/.local/lib/python3.7/site-packages (from ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (3.0.18)
+
+
 Requirement already satisfied: parso<0.9.0,>=0.8.0 in /home/atusi/.local/lib/python3.7/site-packages (from jedi>=0.16->ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (0.8.2)
+
+
 Requirement already satisfied: wcwidth in /home/atusi/.local/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->ipython>=5.0.0->ipykernel->notebook->-r requirement.txt (line 3)) (0.2.5)
+
+
 Requirement already satisfied: jupyterlab-widgets>=1.0.0 in /home/atusi/.local/lib/python3.7/site-packages (from ipywidgets->open3d>=0.10->-r requirement.txt (line 1)) (1.0.0)
+
+
 Requirement already satisfied: jsonschema!=2.5.0,>=2.4 in /home/atusi/.local/lib/python3.7/site-packages (from nbformat->notebook->-r requirement.txt (line 3)) (3.2.0)
+
+
 Requirement already satisfied: attrs>=17.4.0 in /home/atusi/.local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat->notebook->-r requirement.txt (line 3)) (21.2.0)
+
+
 Requirement already satisfied: importlib-metadata in /home/atusi/.local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat->notebook->-r requirement.txt (line 3)) (4.3.1)
+
+
 Requirement already satisfied: pyrsistent>=0.14.0 in /home/atusi/.local/lib/python3.7/site-packages (from jsonschema!=2.5.0,>=2.4->nbformat->notebook->-r requirement.txt (line 3)) (0.17.3)
+
+
 Requirement already satisfied: zipp>=0.5 in /home/atusi/.local/lib/python3.7/site-packages (from importlib-metadata->jsonschema!=2.5.0,>=2.4->nbformat->notebook->-r requirement.txt (line 3)) (3.4.1)
+
+
 Requirement already satisfied: typing-extensions>=3.6.4 in /home/atusi/.local/lib/python3.7/site-packages (from importlib-metadata->jsonschema!=2.5.0,>=2.4->nbformat->notebook->-r requirement.txt (line 3)) (3.10.0.0)
+
+
 Requirement already satisfied: MarkupSafe>=2.0 in /home/atusi/.local/lib/python3.7/site-packages (from jinja2->notebook->-r requirement.txt (line 3)) (2.0.1)
+
+
 Requirement already satisfied: defusedxml in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (0.7.1)
+
+
 Requirement already satisfied: entrypoints>=0.2.2 in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (0.3)
+
+
 Requirement already satisfied: mistune<2,>=0.8.1 in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (0.8.4)
+
+
 Requirement already satisfied: bleach in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (3.3.0)
+
+
 Requirement already satisfied: jupyterlab-pygments in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (0.1.2)
+
+
 Requirement already satisfied: pandocfilters>=1.4.1 in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (1.4.3)
+
+
 Requirement already satisfied: nbclient<0.6.0,>=0.5.0 in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (0.5.3)
+
+
 Requirement already satisfied: testpath in /home/atusi/.local/lib/python3.7/site-packages (from nbconvert->notebook->-r requirement.txt (line 3)) (0.5.0)
+
+
 Requirement already satisfied: async-generator in /home/atusi/.local/lib/python3.7/site-packages (from nbclient<0.6.0,>=0.5.0->nbconvert->notebook->-r requirement.txt (line 3)) (1.10)
+
+
 Requirement already satisfied: webencodings in /home/atusi/.local/lib/python3.7/site-packages (from bleach->nbconvert->notebook->-r requirement.txt (line 3)) (0.5.1)
+
+
 Requirement already satisfied: packaging in /home/atusi/.local/lib/python3.7/site-packages (from bleach->nbconvert->notebook->-r requirement.txt (line 3)) (20.9)
+
+
 Requirement already satisfied: pytz>=2017.3 in /home/atusi/.local/lib/python3.7/site-packages (from pandas->open3d>=0.10->-r requirement.txt (line 1)) (2021.1)
+
+
 Requirement already satisfied: joblib>=0.11 in /home/atusi/.local/lib/python3.7/site-packages (from scikit-learn->sklearn->-r requirement.txt (line 5)) (1.0.1)
+
+
 Requirement already satisfied: threadpoolctl>=2.0.0 in /home/atusi/.local/lib/python3.7/site-packages (from scikit-learn->sklearn->-r requirement.txt (line 5)) (2.1.0)
+
+
 Requirement already satisfied: scipy>=0.19.1 in /home/atusi/.local/lib/python3.7/site-packages (from scikit-learn->sklearn->-r requirement.txt (line 5)) (1.6.3)
+
+
 sudo apt install libxerces-c3.2 libjpeg8
+
+
 パッケージリストを読み込んでいます... 完了
+
+
 依存関係ツリーを作成しています                
+
+
 状態情報を読み取っています... 完了
+
+
 libjpeg8 はすでに最新バージョン (8c-2ubuntu8) です。
+
+
 libxerces-c3.2 はすでに最新バージョン (3.2.0+debian-2) です。
+
+
 以下のパッケージが自動でインストールされましたが、もう必要とされていません:
+
+
   liblldb-10 libnvidia-common-465 linux-image-5.0.0-23-generic linux-modules-5.0.0-23-generic linux-modules-extra-5.0.0-23-generic
+
+
 これを削除するには 'sudo apt autoremove' を利用してください。
+
+
 アップグレード: 0 個、新規インストール: 0 個、削除: 0 個、保留: 435 個。
+
+
 make -C PCDet
+
+
 make[1]: ディレクトリ '/home/atusi/CARLA_INVS/PCDet' に入ります
 
-Please ensure you have CUDA 9.0+ and cuDNN installed! (press ENTER to continue...)
+
+Please ensure you have CUDA 9.0+ and cuDNN installed! (press ENTER to continue...) 
 
 sudo apt install libboost-all-dev -y
+
+
 パッケージリストを読み込んでいます... 完了
+
+
 依存関係ツリーを作成しています                
+
+
 状態情報を読み取っています... 完了
+
+
 libboost-all-dev はすでに最新バージョン (1.65.1.0ubuntu1) です。
+
+
 以下のパッケージが自動でインストールされましたが、もう必要とされていません:
+
+
   liblldb-10 libnvidia-common-465 linux-image-5.0.0-23-generic linux-modules-5.0.0-23-generic linux-modules-extra-5.0.0-23-generic
+
+
 これを削除するには 'sudo apt autoremove' を利用してください。
+
+
 アップグレード: 0 個、新規インストール: 0 個、削除: 0 個、保留: 435 個。
+
+
  sudo apt install llvm-10.0-dev -y; sudo ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
+
+
 pip3 install cmake --user --upgrade
+
+
 Requirement already satisfied: cmake in /home/atusi/.local/lib/python3.7/site-packages (3.20.2)
+
+
 pip3 install "torch>=1.1,<=1.4" --user
+
+
 Requirement already satisfied: torch<=1.4,>=1.1 in /home/atusi/anaconda3/envs/invs/lib/python3.7/site-packages (1.4.0)
+
+
 rm -rf build/spconv && git clone https://github.com/traveller59/spconv.git build/spconv --recursive
+
+
 Cloning into 'build/spconv'...
 remote: Enumerating objects: 1041, done.
 remote: Counting objects: 100% (5/5), done.
