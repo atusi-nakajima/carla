@@ -453,7 +453,7 @@ make -C PCDet
 make[1]: ディレクトリ '/home/atusi/CARLA_INVS/PCDet' に入ります
 
 
-Please ensure you have CUDA 9.0+ and cuDNN installed! (press ENTER to continue...) 
+Please ensure you have CUDA 9.0+ and cuDNN installed! (press ENTER to continue...)   <span style="color: red; ">????</span>
 
 sudo apt install libboost-all-dev -y
 
