@@ -1,90 +1,178 @@
-# Carla INVS install  ubuntu18.04
+# Carla INVS install ubuntu18.04
+
+  
 
 ### carla 0.9.8 install
-sudo apt-get update &&
-sudo apt-get install wget software-properties-common &&
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test &&
-wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add - &&
-sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main" &&
-sudo apt-get update
 
-sudo apt-get install build-essential clang-7 lld-7 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev &&
-pip2 install --user setuptools &&
-pip3 install --user setuptools 
+sudo apt-get update &&  
+
+sudo apt-get install wget software-properties-common  
+
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test  
+
+wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -  
+
+sudo apt-add-repository "deb http://apt.llvm.org/xenial/ llvm-toolchain-xenial-7 main"  
+
+sudo apt-get update  
+
+  
+
+sudo apt-get install build-essential clang-7 lld-7 g++-7 cmake ninja-build libvulkan1 python python-pip python-dev python3-dev python3-pip libpng-dev libtiff5-dev libjpeg-dev tzdata sed curl unzip autoconf libtool rsync libxml2-dev &&  
+
+pip2 install --user setuptools &&  
+
+pip3 install --user setuptools  
+
+  
 
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/lib/llvm-7/bin/clang++ 170 &&
+
 sudo update-alternatives --install /usr/bin/clang clang /usr/lib/llvm-7/bin/clang 170
 
+  
+
 git clone --depth=1 -b 4.22 https://github.com/EpicGames/UnrealEngine.git ~/UnrealEngine_4.22
+
 cd ~/UnrealEngine_4.22
+
 ./Setup.sh && ./GenerateProjectFiles.sh && make
+
 cd ~/UnrealEngine_4.22/Engine/Binaries/Linux && ./UE4Editor
+
 (開けたら成功)
 
+  
+
 git clone https://github.com/carla-simulator/carla
+
 cd ~/carla
-git checkout  e9dd27f
+
+git checkout e9dd27f
+
 ./Update.sh
+
 export UE4_ROOT=~/UnrealEngine_4.22
 
+  
+
 make launch
-make PythonAPI 
+
+make PythonAPI
+
 make package
 
+  
+
 ### python3.7
+
 anacondaをいれてpython3.7を指定して仮想環境作成
+
 (invs) atusi@atusi-G3-3500:~$ python3
-Python 3.7.10 (default, Feb 26 2021, 18:47:35) 
+
+Python 3.7.10 (default, Feb 26 2021, 18:47:35)
+
 [GCC 7.3.0] :: Anaconda, Inc. on linux
+
 Type "help", "copyright", "credits" or "license" for more information.
+
+  
 
 ### CUDA10.1
+
 (invs) atusi@atusi-G3-3500:~$ cat /usr/local/cuda/version.txt
+
 CUDA Version 10.1.243
 
+  
+
 ### pytorch1.4.0
+
 https://pytorch.org/get-started/previous-versions/　から以下のコマンドで入手
+
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 
+  
+
 (invs) atusi@atusi-G3-3500:~$ python3
-Python 3.7.10 (default, Feb 26 2021, 18:47:35) 
+
+Python 3.7.10 (default, Feb 26 2021, 18:47:35)
+
 [GCC 7.3.0] :: Anaconda, Inc. on linux
+
 Type "help", "copyright", "credits" or "license" for more information.
->>> import torch
->>> print(torch.__version__)
+
+\>>> import torch
+
+\>>> print(torch.__version__)
+
 1.4.0
->>> 
+
+>>>
+
+  
 
 ### llvm10.0
+
 https://apt.llvm.org/ を参考に
+
 wget https://apt.llvm.org/llvm.sh
+
 chmod +x llvm.sh
+
 sudo ./llvm.s 10
 
-その後bashrcに以下を追記
+  
+
+その後./bashrcに以下を追記
+
 export PATH=/usr/lib/llvm-10/bin:$PATH
-export LD_LIBRARY_PATH=/usr/lib/llvm-10/lib:$LD_LIBRARY_PATH
+
+export LD_LIBRARY_PATH=/usr/lib/llvm-10/lib:$LD_LIBRARY_PATH  
+
+  
 
 (invs) atusi@atusi-G3-3500:~$ clang -v
+
 Ubuntu clang version 10.0.1-++20210405103842+ef32c611aa21-1~exp1~20210405084441.211
+
 Target: x86_64-pc-linux-gnu
+
 Thread model: posix
+
 InstalledDir: /usr/lib/llvm-10/bin
+
 Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5
+
 Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/5.5.0
+
 Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7
+
 Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7.5.0
+
 Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+
 Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/7.5.0
+
 Candidate multilib: .;@m64
+
 Selected multilib: .;@m64
+
 Found CUDA installation: /usr/local/cuda-10.1, version 10.1
 
+
+  
+
 ### carla_invs install
+
 https://github.com/zijianzhang/CARLA_INVS
+
 make dependency　をおこなうと以下のエラー
 
+  
+
 (invs) atusi@atusi-G3-3500:~/CARLA_INVS$ make dependency
+
 pip3 install -r requirement.txt
 Requirement already satisfied: open3d>=0.10 in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 1)) (0.11.2)
 Requirement already satisfied: plyfile in /home/atusi/.local/lib/python3.7/site-packages (from -r requirement.txt (line 2)) (0.7.4)
@@ -190,7 +278,7 @@ libboost-all-dev はすでに最新バージョン (1.65.1.0ubuntu1) です。
   liblldb-10 libnvidia-common-465 linux-image-5.0.0-23-generic linux-modules-5.0.0-23-generic linux-modules-extra-5.0.0-23-generic
 これを削除するには 'sudo apt autoremove' を利用してください。
 アップグレード: 0 個、新規インストール: 0 個、削除: 0 個、保留: 435 個。
-# sudo apt install llvm-10.0-dev -y; sudo ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
+ sudo apt install llvm-10.0-dev -y; sudo ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
 pip3 install cmake --user --upgrade
 Requirement already satisfied: cmake in /home/atusi/.local/lib/python3.7/site-packages (3.20.2)
 pip3 install "torch>=1.1,<=1.4" --user
