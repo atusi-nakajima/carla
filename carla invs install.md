@@ -376,17 +376,33 @@ Release
 -- Caffe2: Header version is: 10.1
 -- Found CUDNN: /usr/lib/x86_64-linux-gnu/libcudnn.so  
 -- Found cuDNN: v?  (include: /usr/include, library: /usr/lib/x86_64-linux-gnu/libcudnn.so)
+
+
 CMake Error at /home/atusi/anaconda3/envs/invs/lib/python3.7/site-packages/torch/share/cmake/Caffe2/public/cuda.cmake:172 (message):
+
+
   PyTorch requires cuDNN 7 and above.
 Call Stack (most recent call first):
+
+
   /home/atusi/anaconda3/envs/invs/lib/python3.7/site-packages/torch/share/cmake/Caffe2/Caffe2Config.cmake:88 (include)
+
+
   /home/atusi/anaconda3/envs/invs/lib/python3.7/site-packages/torch/share/cmake/Torch/TorchConfig.cmake:40 (find_package)
+
+
   CMakeLists.txt:22 (find_package)
 
 
 -- Configuring incomplete, errors occurred!
+
+
 See also "/home/atusi/CARLA_INVS/PCDet/build/spconv/build/temp.linux-x86_64-3.7/CMakeFiles/CMakeOutput.log".
+
+
 See also "/home/atusi/CARLA_INVS/PCDet/build/spconv/build/temp.linux-x86_64-3.7/CMakeFiles/CMakeError.log".
+
+
 Traceback (most recent call last):
   File "setup.py", line 108, in <module>
     zip_safe=False,
@@ -416,12 +432,40 @@ Traceback (most recent call last):
     subprocess.check_call(['cmake', ext.sourcedir] + cmake_args, cwd=self.build_temp, env=env)
   File "/home/atusi/anaconda3/envs/invs/lib/python3.7/subprocess.py", line 363, in check_call
     raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['cmake', '/home/atusi/CARLA_INVS/PCDet/build/spconv', '-DCMAKE_PREFIX_PATH=/home/atusi/anaconda3/envs/invs/lib/python3.7/site-packages/torch', '-DPYBIND11_PYTHON_VERSION=3.7', '-DSPCONV_BuildTests=OFF', '-DPYTORCH_VERSION=10400', '-DCMAKE_CUDA_FLAGS="--expt-relaxed-constexpr" -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__', '-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/atusi/CARLA_INVS/PCDet/build/spconv/build/lib.linux-x86_64-3.7/spconv', '-DCMAKE_BUILD_TYPE=Release']' returned non-zero exit status 1.
+
+
+subprocess.CalledProcessError: Command '['cmake', '/home/atusi/CARLA_INVS/PCDet/build/spconv', 
+
+'-DCMAKE_PREFIX_PATH=/home/atusi/anaconda3/envs/invs/lib/python3.7/site-packages/torch', 
+
+'-DPYBIND11_PYTHON_VERSION=3.7', '-DSPCONV_BuildTests=OFF', '-DPYTORCH_VERSION=10400', 
+
+'-DCMAKE_CUDA_FLAGS="--expt-relaxed-constexpr" -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__', 
+
+'-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/atusi/CARLA_INVS/PCDet/build/spconv/build/lib.linux-x86_64-3.7/spconv', 
+
+'-DCMAKE_BUILD_TYPE=Release']' returned non-zero exit status 1.
+
+
 /bin/bash: 0 行: cd: ./dist: そのようなファイルやディレクトリはありません
+
+
 WARNING: Requirement '*.whl' looks like a filename, but the file does not exist
+
+
 ERROR: *.whl is not a valid wheel filename.
+
+
 Makefile:18: recipe for target 'install-spconv' failed
+
+
 make[1]: *** [install-spconv] Error 1
+
+
 make[1]: ディレクトリ '/home/atusi/CARLA_INVS/PCDet' から出ます
+
+
 Makefile:4: recipe for target 'dependency' failed
+
+
 make: *** [dependency] Error 2
