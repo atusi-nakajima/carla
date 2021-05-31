@@ -1,5 +1,5 @@
 # Carla INVS install ubuntu18.04
-
+https://github.com/zijianzhang/CARLA_INVS 　をインストール
   
 
 ### carla 0.9.8 install
@@ -88,7 +88,7 @@ CUDA Version 10.1.243
 
 ### pytorch1.4.0
 
-https://pytorch.org/get-started/previous-versions/　から以下のコマンドで入手
+https://pytorch.org/get-started/previous-versions/  から以下のコマンドで入手
 
 conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.1 -c pytorch
 
